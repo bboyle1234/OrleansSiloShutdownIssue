@@ -1,4 +1,5 @@
 **Update**
+
 Fix for the shutdown issue was this code - setting `a.Cancel = true;`: 
 ```
     Console.CancelKeyPress += (s, a) => {
