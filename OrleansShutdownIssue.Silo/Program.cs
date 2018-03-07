@@ -62,6 +62,7 @@ namespace OrleansShutdownIssue.Silo {
                 })
                 .ConfigureLogging(builder => builder.SetMinimumLevel(LogLevel.Warning).AddConsole())
                 .AddMemoryGrainStorageAsDefault(options => options.NumStorageGrains = 1)
+                // this setting makes no difference - I've experimented with both true and false
                 .Configure<ProcessExitHandlingOptions>(options => options.FastKillOnProcessExit = true)
                 .Build();
         }
