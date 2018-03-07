@@ -1,3 +1,13 @@
+**Update**
+Fix for the shutdown issue was this code - setting `a.Cancel = true;`: 
+```
+    Console.CancelKeyPress += (s, a) => {
+        a.Cancel = true;
+        Task.Run(StopSilo);
+    };
+```
+I"m not sure what to do about the log warning though
+
 # OrleansSiloShutdownIssue
 
 An interesting investigation of console app shutdown behaviour. Now that I've come this far with the experiment, it looks like it may have nothing to do with Orleans itself. 
