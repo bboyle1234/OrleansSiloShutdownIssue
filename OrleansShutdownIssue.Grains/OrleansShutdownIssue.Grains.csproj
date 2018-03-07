@@ -6,8 +6,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="2.0.4" />
-    <PackageReference Include="Microsoft.Orleans.Core.Abstractions" Version="2.0.0-rc1" />
+    <PackageReference Include="Microsoft.Orleans.Core" Version="2.0.0-rc1" />
     <PackageReference Include="Microsoft.Orleans.OrleansCodeGenerator.Build" Version="2.0.0-rc1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OrleansShutdownIssue.Interfaces\OrleansShutdownIssue.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>
