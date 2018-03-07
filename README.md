@@ -4,7 +4,7 @@ An interesting investigation of console app shutdown behaviour. Now that I've co
 
 If the `Console.CancelKeyPressed` event handler returns before the `static void Main(string[] args)` method returns, the console app hangs.
 
-In this project, the Orleans silo shutdown triggers `_siloShutdownEvent.Set()`. The two methods mentioned above are waiting on that event before they can return. If there are no `Thread.Sleep(100)` statements in the code, it's a random race to the finish. When `Main` finishes first, the program exits gracefully.
+In this project, the Orleans silo shutdown triggers `_siloShutdownEvent.Set()`. The two methods mentioned above are waiting on that event before they can return. If there are no `Thread.Sleep(100)` statements in the code, it's a random race to the finish. When `Main` finishes first, the program exits gracefully. When `Console.CancelKeyPress` finishes first, the program hangs.
 
 I've added a bool flag that you can change to determine the race winner so you can see both outcomes. 
 
